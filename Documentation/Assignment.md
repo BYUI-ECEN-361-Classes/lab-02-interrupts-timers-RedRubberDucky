@@ -1,6 +1,6 @@
 # ECEN-361 Lab-02: Clocks, Timers, and Interrupts
 ### Winter-2025
-     Student Name:  Fill-in HERE
+     Student Name: Isaac Stanworth
 
 
 ## Introduction and Objective of the Lab
@@ -75,9 +75,9 @@ Note the speed of D1/D2/D3 - they should seem like a 3-bit binary counter.
 
 Once you have all three LEDs blinking properly, answer the following questions:
 
-1. At what frequency does D1 toggle? [*answer here*]
+1. At what frequency does D1 toggle? [*The light is toggleing at 1 Hz. The light is blinking at 1/2 a Hz. *]
 
-2. Do all LEDs toggle at *exactly* the same time? [*answer here*]
+2. Do all LEDs toggle at *exactly* the same time? [*No its a trick question, from our perspective watching it we can not destinguish the change but he microcontroller can only do one task at a time. Because it is running at (80 MHz) such a fast speed that is why we can't tell that they are just slightly off.*]
 
 ## Part 2: Changing the clock tree
 
@@ -92,11 +92,11 @@ Change the clock tree to adjust the rates at which the LEDs blink.
 
 ## Part 2 Questions (3 pts)
 
-1. What has happened to the speed of the timers? [*answer here*]
+1. What has happened to the speed of the timers? [*The timer has been slowed from 80 MHz to 10MHz making it so that the lights blink at a slower rate. Before it goes to the board it is multiplied by 2 making the final of 20 MHz*]
 
-2. What is the new frequency of LED D1? [*answer here*]
+2. What is the new frequency of LED D1? [*The previouse frequency was 1 Hz. We can put that value through the same equation of dividing by 1/8 to get an 1/8. Then multiply by 2 to then get 1/4. The final frequency that it is now functioning at is 1/4 Hz.*]
 
-3. When we changed the frequency, did the Seven-Segment Light update rate change?  (hint, look at the clocks driving the APB1, APB2 buses and which timers are on which bus.  Recall that the Seven-Segment timer is Tim17) [*answer here*]
+3. When we changed the frequency, did the Seven-Segment Light update rate change?  (hint, look at the clocks driving the APB1, APB2 buses and which timers are on which bus.  Recall that the Seven-Segment timer is Tim17) [*Yes I think it did. It isn't just changing the timers it is also changing the peripheral clock as well. It does not multiply it  by 2 so it will be slower than the blinking lights speed.*]
 
 ## Part 3: Reaction Timer (5 pts)
 
